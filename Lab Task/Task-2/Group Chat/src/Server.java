@@ -22,6 +22,7 @@ public class Server
 
                 ClientHandler clientHandler = new ClientHandler(socket);
                 Thread thread = new Thread(clientHandler);
+                thread.start();
             }
         }
         catch (IOException e)

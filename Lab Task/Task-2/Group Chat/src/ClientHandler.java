@@ -14,6 +14,7 @@ public class ClientHandler implements Runnable
     {
         try
         {
+            this.socket = socket;
             this.bufferedWriter = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
             this.bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             this.clientUsername = bufferedReader.readLine();
@@ -50,7 +51,8 @@ public class ClientHandler implements Runnable
         {
             try
             {
-                if(!clientHandler.clientUsername.equals(clientUsername)) {
+                if(!clientHandler.clientUsername.equals(clientUsername))
+                {
                     clientHandler.bufferedWriter.write(messageToSend);
                     clientHandler.bufferedWriter.newLine();
                     clientHandler.bufferedWriter.flush();
