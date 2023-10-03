@@ -30,22 +30,7 @@ public class Server
 
         }
     }
-
-    public void closedSocket()
-    {
-        try
-        {
-            if(serverSocket != null)
-            {
-                serverSocket.close();
-            }
-        }
-        catch (IOException e)
-        {
-            e.printStackTrace();
-        }
-    }
-
+    
     public static void main(String[] args) throws Exception
     {
          ServerSocket serverSocket = new ServerSocket(8080);
